@@ -1,9 +1,11 @@
 import readFunction from "./src/function/read.ts";
 import writeFunction from "./src/function/write.ts";
-import deployFunction, { DeployOptions } from "./src/function/deploy.ts";
+import deployFunction from "./src/function/deploy.ts";
 
-import { ContractType } from "./src/utils.ts";
+import { ContractType, Decoder } from "./src/common.ts";
 import { cac } from "./src/deps.ts";
+import { DeployOptions } from "./src/function/model.ts";
+import { getContractTypeBasedOnExt } from "./src/utils.ts";
 
 const cli = cac("exm");
 cli.help();
@@ -61,13 +63,8 @@ cli
       let initState: string | undefined;
 
       if (source) {
-        if (source.endsWith(".js")) {
-          contractType = ContractType.JS;
-        } else if (source.endsWith(".wasm")) {
-          contractType = ContractType.WASM;
-        }
-
-        contractSrc = new TextDecoder().decode(Deno.readFileSync(source));
+        contractType = getContractTypeBasedOnExt(source);
+        contractSrc = Decoder.decode(Deno.readFileSync(source));
       } else if (sourceTx) {
         if (sourceTx.length != 43) {
           throw new Error("Invalid transaction source transaction ID");
@@ -83,7 +80,7 @@ cli
       if (typeof initialState == "string") {
         initState = initialState;
       } else if (initialStateSource) {
-        initState = new TextDecoder().decode(
+        initState = Decoder.decode(
           Deno.readFileSync(initialStateSource),
         );
       } else {

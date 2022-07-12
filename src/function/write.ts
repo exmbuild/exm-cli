@@ -1,4 +1,4 @@
-import { em } from "../utils.ts";
+import { em } from "../em.ts";
 
 export default async function write(
   id: string,
