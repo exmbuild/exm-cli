@@ -1,0 +1,1 @@
+require('@execution-machine/sdk/dist/cli/index');

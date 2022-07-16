@@ -1,0 +1,27 @@
+{
+  "name": "cli",
+  "version": "0.1.0-alpha",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deliver": "npm publish --access public"
+  },
+  "bin": {
+    "exm": "index.js",
+    "exm-cli": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/three-em/exm-cli.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/three-em/exm-cli/issues"
+  },
+  "homepage": "https://github.com/three-em/exm-cli#readme",
+  "dependencies": {
+    "@execution-machine/sdk": "^0.1.0-alpha"
+  }
+}
