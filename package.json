@@ -1,6 +1,6 @@
 {
   "name": "@execution-machine/cli",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,15 +13,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/three-em/exm-cli.git"
+    "url": "git+https://github.com/exmbuild/exm-cli.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/three-em/exm-cli/issues"
+    "url": "https://github.com/exmbuild/exm-cli/issues"
   },
-  "homepage": "https://github.com/three-em/exm-cli#readme",
+  "homepage": "https://github.com/exmbuild/exm-cli#readme",
   "dependencies": {
-    "@execution-machine/sdk": "^0.1.0-alpha"
+    "@execution-machine/sdk": "^0.1.0"
   }
 }
